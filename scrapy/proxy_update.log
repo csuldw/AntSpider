@@ -28,3 +28,5 @@ INSERT INTO proxys (proxy_ip,created_time ) VALUES ("58.218.214.143:13370","2019
 detect finished!
 valid ip size:  46
 detect finished!
+valid ip size:  43
+detect finished!
