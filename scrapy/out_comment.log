@@ -1,0 +1,33 @@
+Traceback (most recent call last):
+  File "/Users/liudiwei/anaconda3/bin/scrapy", line 10, in <module>
+    sys.exit(execute())
+  File "/Users/liudiwei/anaconda3/lib/python3.7/site-packages/scrapy/cmdline.py", line 145, in execute
+    cmd.crawler_process = CrawlerProcess(settings)
+  File "/Users/liudiwei/anaconda3/lib/python3.7/site-packages/scrapy/crawler.py", line 267, in __init__
+    super(CrawlerProcess, self).__init__(settings)
+  File "/Users/liudiwei/anaconda3/lib/python3.7/site-packages/scrapy/crawler.py", line 145, in __init__
+    self.spider_loader = _get_spider_loader(settings)
+  File "/Users/liudiwei/anaconda3/lib/python3.7/site-packages/scrapy/crawler.py", line 347, in _get_spider_loader
+    return loader_cls.from_settings(settings.frozencopy())
+  File "/Users/liudiwei/anaconda3/lib/python3.7/site-packages/scrapy/spiderloader.py", line 61, in from_settings
+    return cls(settings)
+  File "/Users/liudiwei/anaconda3/lib/python3.7/site-packages/scrapy/spiderloader.py", line 25, in __init__
+    self._load_all_spiders()
+  File "/Users/liudiwei/anaconda3/lib/python3.7/site-packages/scrapy/spiderloader.py", line 47, in _load_all_spiders
+    for module in walk_modules(name):
+  File "/Users/liudiwei/anaconda3/lib/python3.7/site-packages/scrapy/utils/misc.py", line 73, in walk_modules
+    submod = import_module(fullpath)
+  File "/Users/liudiwei/anaconda3/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/Users/liudiwei/github/SwiftQA/AntSpider/scrapy/douban/spiders/movie_comment.py", line 59
+    regx = '//a[preceding-sibling::span[text()="< 前页"]][following-sibling::</div>]/@href'
+    ^
+IndentationError: unexpected indent
