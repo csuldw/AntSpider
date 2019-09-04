@@ -16,8 +16,7 @@ import time
 MAX_SIZE = 50
 
 def get_new_ip(num):
-    url = "https://dps.kdlapi.com/api/getdps/?orderid=986735033603930&num="+ str(num) +"&pt=1&dedup=1&sep=4"
-    #url = "https://dps.kdlapi.com/api/getdps/?orderid=966475943170494&num=1&pt=1&dedup=1&sep=1"
+    url = ""#代理商的IP连接，Get请求，返回结果为“|”连接的IP
     time.sleep(1)
     return requests.get(url).text.strip().split("|")
 
@@ -27,11 +26,7 @@ def get_ip_list(num):
       'ip': '119.142.205.84',
       'port': '4341'}]
     """
-    #url = "http://http.tiqu.qingjuhe.cn/getip?num=" + str(num) + "&type=2&pack=37199&port=11&yys=100017&pro=440000&ts=1&lb=1&pb=4&regions="
-    #url = "http://http.tiqu.qingjuhe.cn/getip?num=" + str(num) + "&type=2&pack=37196&port=11&yys=100017&pro=440000&ts=1&lb=1&pb=4&regions="
-    #url = "http://http.tiqu.qingjuhe.cn/getip?num=" + str(num) + "&type=2&pack=37196&port=1&yys=100017&pro=440000&ts=1&lb=1&pb=4&regions="
-    url = "http://http.tiqu.qingjuhe.cn/getip?num=" + str(num) + "&type=2&pack=37304&port=1&yys=100017&pro=440000&ts=1&lb=1&pb=4&regions="
-    #url = "http://http.tiqu.qingjuhe.cn/getip?num=" + str(num) + "&type=2&pack=37304&port=11&yys=100017&pro=440000&ts=1&lb=1&pb=4&regions="
+    url = ""#代理商的IP连接，Get请求，返回结果为上面的数组
     ip_list = json.loads(requests.get(url).text)["data"]
     print("ip_list",ip_list)
     return ip_list
