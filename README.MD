@@ -49,8 +49,7 @@ DOWNLOADER_MIDDLEWARES = {
 }
 ```
 
-- CONCURRENT_REQUESTS修改为
-
+然后就可以开始进行电影数据爬取了，命令如下：
 
 ```
 # 进入 scrapy 目录
