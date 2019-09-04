@@ -77,6 +77,8 @@ class PersonMetaSpider(Spider):
         print("============get_birth:", data)
         if data:
             meta['birth'] = validator.str_to_date(validator.match_date(data[0].strip("\n")))
+            if not meta['birth']:
+                meta['birth'] = data[0].strip("\n").split(":")[-1]
         return meta
 
 
