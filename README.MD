@@ -2,7 +2,7 @@
 
 ## 介绍
 
-本项目是针对豆瓣电影、名人、书籍、评论于一体的爬虫项目，关于爬虫的代码细节，笔者正在整理中，还请读者见谅。爬虫框架说明和爬虫数据分析介绍可参考笔者下面的文章。本项目配置代理之后，在Mac单机上面，一晚上可以爬取千万影评，如果没有代理，另当别论啦。如需代理相关的信息，读者可在关注笔者的公众号，在公众号回复即可，笔者每天都会回复的。
+本项目是针对豆瓣电影、名人、书籍、评论于一体的爬虫项目，关于爬虫的代码细节，笔者正在整理中，还请读者见谅。爬虫框架说明和爬虫数据分析介绍可参考笔者下面的文章。本项目配置代理之后，将并发数调至1000，在Mac单机上面，一晚上可以爬取千万影评，如果没有代理，就另当别论啦。代理其实网上有免费的，但是不太好用，笔者花了几十块从代理商买了一周，足够用了。这里就不专门给代理商打广告了，如读者需要我推荐相关代理，可在关注笔者的公众号，在公众号留言即可，笔者每天都会回复的。
 
 
 1. [13万豆瓣电影数据爬取原理剖析](http://www.csuldw.com/2019/08/29/2019-08-29-douban-spider/)
@@ -75,7 +75,7 @@ scrapy crawl movie_comment
 ```
 #将movie中的演员名和演员ID抽取出来，存放到person_obj表
 python3 scrapy/douban/rebuild_pid.py
-scrapy crawl person_meta
+scrapy crawl person_item
 ```
 
 7.爬取书籍信息（附加）
@@ -97,4 +97,4 @@ scrapy crawl book_comment
 
 ## 联系作者
 
-![](https://mmbiz.qpic.cn/mmbiz_png/tcZekEnNYxfXRnttaeKXbUzO9LJsMV6o30T14Pn2Vt06KepdicHZz7OGLSkLLQOrIqqP19C2IKhndMcxhEENaBQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+![](http://www.csuldw.com/assets/articleImg/2019/code-main-fun.png)

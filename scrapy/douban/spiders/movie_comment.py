@@ -21,7 +21,6 @@ cursor = db.connection.cursor()
 class MovieCommentSpider(Spider):
     name = 'movie_comment'
     allowed_domains = ['movie.douban.com']
-    # sql = 'SELECT douban_id FROM movies'
     sql = "SELECT douban_id FROM movies where douban_id not in (\
         select douban_id from (select douban_id,count(*) num from comments GROUP BY douban_id) a where a.num >50\
     )"
@@ -29,11 +28,7 @@ class MovieCommentSpider(Spider):
     movies = cursor.fetchall()
     random.shuffle(movies)
     start_urls = {
-        # str(i['douban_id']): ('https://m.douban.com/rexxar/api/v2/movie/%s/interests?count=5&order_by=hot' % i['douban_id']) for i in movies
         str(i['douban_id']): ('https://movie.douban.com/subject/%s/comments?status=P' % i['douban_id']) for i in movies
-        # "26946624": 'https://movie.douban.com/subject/3217770/comments?status=P',
-        # "26868553": 'https://movie.douban.com/subject/3217770/comments?status=P',
-        # "26426194": 'https://movie.douban.com/subject/26426194/comments?status=P'
     }
 
 
@@ -135,24 +130,6 @@ class MovieCommentSpider(Spider):
                     'handle_httpstatus_list': [302],
                 }
                 yield Request(url, cookies=cookies,meta={'main_url':url})
-
-
-        # if 302 == response.status:
-        #     print("movie.comment.response.302.url: ",response.url)
-        # else:
-        #     douban_id = main_url.split('/')[7]
-        #     print("#####comment.douban_id:", douban_id)
-        #     items = json.loads(response.body)['interests']
-        #     for item in items:
-        #         comment = Comment()
-        #         comment['douban_id'] = douban_id
-        #         comment['douban_comment_id'] = item['id']
-        #         comment['douban_user_nickname'] = item['user']['name']
-        #         comment['douban_user_avatar'] = item['user']['avatar']
-        #         comment['douban_user_url'] = item['user']['url']
-        #         comment['content'] = item['comment']
-        #         comment['votes'] = item['vote_count']
-        #         yield comment
 
     def second_parse(self,response):
         """print user-agent"""

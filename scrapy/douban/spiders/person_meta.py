@@ -30,7 +30,6 @@ class PersonMetaSpider(Spider):
     print("select person_id from db: ", sql)
     cursor.execute(sql)
     person_ids = cursor.fetchall()
-    #person_list = [ i['person_id'] for i in person_ids]
 
     start_urls = [
         'https://movie.douban.com/celebrity/%s/' % i['person_id'] for i in person_ids

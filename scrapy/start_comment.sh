@@ -4,4 +4,4 @@ ps -ef | grep scrapy | grep -v grep | grep 'movie_comment' | cut -c 6-12 | xargs
 
 cd /Users/liudiwei/github/SwiftQA/AntSpider/scrapy
 
-/Users/liudiwei/anaconda3/bin/python /Users/liudiwei/anaconda3/bin/scrapy crawl movie_comment3
+/Users/liudiwei/anaconda3/bin/python /Users/liudiwei/anaconda3/bin/scrapy crawl movie_comment

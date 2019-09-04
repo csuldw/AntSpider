@@ -17,7 +17,6 @@ from scrapy import Request, Spider
 
 cursor = db.connection.cursor()
 
-
 class BookMetaSpider(Spider):
     name = 'book_meta'
     user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 \
