@@ -1,3 +1,4 @@
+.gitignore
 *.pyc
 *.swp
 scrapy/storage/
