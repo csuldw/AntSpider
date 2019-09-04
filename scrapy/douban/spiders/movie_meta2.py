@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+"""
+Created on Tue Jul 30 23:41:38 2019
 
+@author: liudiwei
+"""
 
 import string
 import random

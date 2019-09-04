@@ -13,7 +13,7 @@ import database as db
 cursor = db.connection.cursor()
 import time
 
-MAX_SIZE = 40
+MAX_SIZE = 50
 
 def get_new_ip(num):
     url = "https://dps.kdlapi.com/api/getdps/?orderid=986735033603930&num="+ str(num) +"&pt=1&dedup=1&sep=4"
@@ -52,7 +52,7 @@ def check_ip_valid(ip):
 def save_proxy(proxy, expire_time=None):
     keys = ["proxy_ip"]
     if expire_time:
-        keys.append("created_time ")
+        keys.append("valid_time")
         
     fields = ','.join(keys)
     
@@ -82,7 +82,7 @@ def get_proxy():
 
 
 def get_valid_proxy():
-    sql = "SELECT DISTINCT(proxy_ip) FROM proxys where valid=1 and CURRENT_TIME<proxys.created_time"
+    sql = "SELECT DISTINCT(proxy_ip) FROM proxys where valid=1 and CURRENT_TIME<proxys.valid_time"
     cursor.execute(sql)
     all_proxy = cursor.fetchall()
     proxy_list = []
@@ -118,7 +118,7 @@ def quick_proxy():
     print("detect finished!")
             
 def update_valid_proxy():
-    sql = 'UPDATE proxys SET valid=0 WHERE CURRENT_TIME>proxys.created_time'
+    sql = 'UPDATE proxys SET valid=0 WHERE CURRENT_TIME>proxys.valid_time'
     cursor.execute(sql)
     
     #sql = 'UPDATE proxys SET valid=0 WHERE proxy_ip in (select proxy_ip from (select proxy_ip,call_times,created_time from proxys where valid=1 order by call_times desc,created_time desc limit 10) as a)'
@@ -133,6 +133,7 @@ if __name__ == '__main__':
     proxy_list = get_valid_proxy()
     
     print("valid ip size: ", len(proxy_list) )
+    
     if len(proxy_list) < MAX_SIZE:
         ip_num = 10 + int(math.fabs(MAX_SIZE - len(proxy_list)))
         print("ip_num: ", ip_num, ",proxy_list size:", len(proxy_list))

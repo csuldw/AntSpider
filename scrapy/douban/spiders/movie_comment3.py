@@ -1,5 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+"""
+Created on Tue Jul 30 23:41:38 2019
+
+@author: liudiwei
+"""
 
 import json
 import random
@@ -26,7 +31,6 @@ class MovieCommentSpider(Spider):
     start_urls = {
         # str(i['douban_id']): ('https://m.douban.com/rexxar/api/v2/movie/%s/interests?count=5&order_by=hot' % i['douban_id']) for i in movies
         str(i['douban_id']): ('https://movie.douban.com/subject/%s/comments?status=P' % i['douban_id']) for i in movies
-        #"3217770": 'https://movie.douban.com/subject/3217770/comments?status=P',
         # "26946624": 'https://movie.douban.com/subject/3217770/comments?status=P',
         # "26868553": 'https://movie.douban.com/subject/3217770/comments?status=P',
         # "26426194": 'https://movie.douban.com/subject/26426194/comments?status=P'

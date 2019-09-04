@@ -1,6 +1,4 @@
-## ScrapyDouban
-
-[![ScrapyDouban Demo](https://img.youtube.com/vi/Yt8_j0TEvh0/0.jpg)](https://www.youtube.com/watch?v=Yt8_j0TEvh0) [演示视频](https://www.youtube.com/watch?v=Yt8_j0TEvh0)
+## 介绍
 
 基于 Python3 的豆瓣电影/豆瓣读书 Scarpy 爬虫，实现封面下载+元数据抓取+评论入库+IP 代理池。
 
@@ -8,29 +6,15 @@
 
 ![Python3](https://www.python.org/static/community_logos/python-powered-w-200x80.png)
 ![MySQL](https://www.mysql.com/common/logos/powered-by-mysql-167x86.png)
-![Docker](https://www.docker.com/sites/default/files/horizontal.png)
-![Alpine Linux](https://alpinelinux.org/alpinelinux-logo.svg)
-
-### Docker
--------
-项目包含了 douban_scrapy douban_db douban_adminer 三个容器。
-
-douban_scrapy 容器基于 alpine:3.8，默认安装的 Python3 库有 scrapy pymysql pillow arrow scylla，默认运行 Scylla 代理池，默认映射端口 8899:8899 以方便用户通过宿主机 IP 访问 Scylla 管理界面。
-
-douban_db 容器基于 mysql:8，root 密码为 HardM0de，默认初始化时导入 docker/mysql/douban.sql 文件到 douban 数据库。
-
-douban_adminer 容器基于 adminer:4，默认映射端口 8080:8080 以方便用户通过宿主机 IP 访问数据库管理界面。
-
 
 ### 项目 SQL
-------
 
 项目所使用的 SQL 文件存放路径为 docker/mysql/douban.sql 。
 
-### 收集流程
--------
+### 各模块爬取流程
 
-    首先收集 Subject ID --> 然后通过 Subject ID 抓取详情页面，收集元数据 --> 最后通过 Subject ID 来收集评论
+
+首先收集 Subject ID --> 然后通过 Subject ID 抓取详情页面，收集元数据 --> 最后通过 Subject ID 来收集评论
 
 ### 使用方法
 -------
@@ -58,12 +42,3 @@ douban_adminer 容器基于 adminer:4，默认映射端口 8080:8080 以方便�
 由于豆瓣的反爬虫机制，现在只能通过代理 IP 来绕过。douban_scrapy 容器里面配置好了一个很好的代理池：[Scylla](https://github.com/imWildCat/scylla)，默认 settings.py 里面并未启用 douban.middlewares.ProxyMiddleware 中间件，因为 Scylla 代理池的 IP 来源于网上公开的代理发布网站，所有一定几率其中的 IP 已经被 ban 掉，这里只是为了展示 Scrapy 代理 IP 的工作流程，如果你真的需要使用豆瓣的数据来进行一些研究，可以去租用付费的代理池。
 
 
-### 图片下载
---------
-
-douban.pipelines.CoverPipeline 通过对 spider.name 进行过滤来处理封面下载逻辑，所下载图片文件的保存路径为 douban_scrapy 容器的 /srv/ScrapyDouban/storage 目录。
-
-注：如果你在收集 subject 的时候出现类似下面 INFO 信息，那么你需要在服务器上 curl 访问一下对应 script 生成的 url 来通过豆瓣的检测机制。
-
-    https://movie.douban.com/subject/26593061/
-    <script>var d=[navigator.platform,navigator.userAgent,navigator.vendor].join("|");window.location.href="https://sec.douban.com/a?c=3d001f&d="+d+"&r=https%3A%2F%2Fmovie.douban.com%2Fsubject%2F26590960%2F";</script>

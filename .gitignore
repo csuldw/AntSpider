@@ -1,0 +1,7 @@
+*.pyc
+*.swp
+scrapy/storage/
+__pycache__/
+.idea/
+scrapy/log/
+scrapy/*.sh

@@ -18,7 +18,7 @@ SPIDER_MODULES = ['douban.spiders']
 NEWSPIDER_MODULE = 'douban.spiders'
 
 LOG_LEVEL = 'DEBUG'
-IMAGES_STORE = '../storage/'
+IMAGES_STORE = './storage/'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 USER_AGENT = random.choice(AGENT_LIST)
@@ -40,7 +40,7 @@ DEPTH_STATS_VERBOSE=True
 DOWNLOAD_TIMEOUT = 10
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-CONCURRENT_REQUESTS = 300
+CONCURRENT_REQUESTS = 500
 
 # Configure a delay for requests for the same website (default: 0)
 # See https://doc.scrapy.org/en/latest/topics/settings.html#download-delay
