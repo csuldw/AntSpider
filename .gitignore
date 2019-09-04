@@ -7,3 +7,4 @@ __pycache__/
 scrapy/log/
 scrapy/*.sh
 scrapy/douban/spiders/movie_comment-bak*
+scrapy/douban/update_proxy_new.py

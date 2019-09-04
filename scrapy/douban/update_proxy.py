@@ -33,7 +33,7 @@ def get_ip_list(num):
     
 def check_ip_valid(ip):
     time.sleep(1)
-    url = "https://dps.kdlapi.com/api/checkdpsvalid?orderid=986735033603930&signature=mdb8nj4zidndgzodchmhjhzphwz6a5wo&proxy=" + ip
+    url = "" #代理商判断IP是否有效
     text = requests.get(url, verify=False).text
     result = json.loads(text)["data"][ip]
     print("check result: ",result)
