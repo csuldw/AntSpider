@@ -1,6 +1,6 @@
-## douban爬虫说明
+## 豆瓣爬虫说明
 
-`douban`目录是主要的爬虫内容，各个文件说明如下：
+scrapy目录为爬虫的核心，爬虫基于scrapy框架，各个目录和文件的说明如下：
 
 1. douban: 豆瓣爬虫
 	1. spiders: 存放你Spider文件，也就是你爬取的py文件
@@ -24,6 +24,7 @@
 	10. douban/rebuild_pid.py: 将movie中的actor_ids和director_ids转存到person_obj表中.
 2. sql: sql语句
 3. scrapy.cfg：配置文件。
+4. 三个shell文件为笔者自己部署爬虫的时候编写的，可忽略。
 
 
 ## 添加cookie的三种方式

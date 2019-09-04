@@ -6,3 +6,4 @@ __pycache__/
 .idea/
 scrapy/log/
 scrapy/*.sh
+scrapy/douban/spiders/movie_comment-bak*
