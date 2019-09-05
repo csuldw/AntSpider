@@ -6,7 +6,8 @@
 
 
 1. [13万豆瓣电影数据爬取原理剖析](http://www.csuldw.com/2019/08/29/2019-08-29-douban-spider/)
-2. [豆瓣13万电影数据统计与分析](http://www.csuldw.com/2019/08/12/2019-08-12-douban-movies-statistics/)
+2. [350万豆瓣电影评论数据爬取](http://www.csuldw.com/2019/09/05/2019-09-05-douban-comment-stat/)
+3. [豆瓣13万电影数据统计与分析](http://www.csuldw.com/2019/08/12/2019-08-12-douban-movies-statistics/)
 
 
 ## 数据爬取流程说明

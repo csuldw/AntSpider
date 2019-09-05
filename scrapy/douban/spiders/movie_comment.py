@@ -92,7 +92,7 @@ class MovieCommentSpider(Spider):
                     vote_list = resp_item.xpath(vote_regx)
                     print("\n+++++++++++++++++++++++++vote_list:",vote_list)
 
-                    #投票数量
+                    #评分
                     rating_regx = '//div[@class="comment"]/h3/span[@class="comment-info"]/span[contains(@class,"allstar")]/@class'        
                     rating_list = resp_item.xpath(rating_regx)
                     print("\n+++++++++++++++++++++++++rating", rating_list)
