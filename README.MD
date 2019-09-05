@@ -1,4 +1,4 @@
-# 300万豆瓣影评数据爬取说明
+# 350万+豆瓣影评数据爬取说明
 
 ## 介绍
 
@@ -88,6 +88,8 @@ scrapy crawl book_meta
 # 收集书籍评论
 scrapy crawl book_comment 
 ```
+
+![](./img/douban_data_count.png)
 
 ## 后记
 

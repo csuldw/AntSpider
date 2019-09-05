@@ -22,7 +22,7 @@ class MovieCommentSpider(Spider):
     name = 'movie_comment'
     allowed_domains = ['movie.douban.com']
     sql = "SELECT douban_id FROM movies where douban_id not in (\
-        select douban_id from (select douban_id,count(*) num from comments GROUP BY douban_id) a where a.num >50\
+        select douban_id from (select douban_id,count(*) num from comments GROUP BY douban_id) a where a.num >1\
     )"
     cursor.execute(sql)
     movies = cursor.fetchall()

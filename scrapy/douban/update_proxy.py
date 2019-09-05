@@ -39,7 +39,7 @@ def check_ip_valid(ip):
     print("check result: ",result)
     return result
 
-#sql = "SELECT * FROM proxys where valid = 1"
+#sql = "SELECT * FROM update_proxy_new.pyproxys where valid = 1"
 #cursor.execute(sql)
 #cursor.fetchone()
 
