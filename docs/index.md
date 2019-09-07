@@ -119,6 +119,6 @@ users.csv数据为豆瓣用户的无脱敏信息，主要是与评论和评分�
 
 <!-- [MIT](LICENSE) &copy;  -->
 1. [Diwei Liu](http://www.csuldw.com)
-2. [Yong Gao](http://www.yogolab.com)
-4. [Yina Xu](https://github.com/SnailXu)
+2. [Yong Gao]()
+3. [Yina Xu]()
 
