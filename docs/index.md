@@ -39,7 +39,7 @@ title: 数据使用说明
 - COVER: 封面图片地址
 - DIRECTORS: 导演
 - GENRES: 类型
-- OFFICIAL_SITE: 地址
+- OFFICIAL_SITE: 官方地址
 - REGIONS: 制片国家/地区
 - LANGUAGES: 语言
 - RELEASE_DATE: 上映日期
