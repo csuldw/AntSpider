@@ -138,6 +138,17 @@ class DoubanPipeline(object):
         cursor.execute(sql, values)
         return db.connection.commit()
 
+    def update_comment(self, item):
+        douban_comment_id = item.pop('douban_comment_id')
+        keys = item.keys()
+        values = tuple(item.values())
+        #values.append(douban_id)
+        fields = ['%s=' % i + '%s' for i in keys]
+        sql = 'UPDATE comments SET %s WHERE douban_comment_id=%s' % (','.join(fields), douban_comment_id)
+        print("##update## update_comment: ", sql)
+        cursor.execute(sql, tuple(i.strip() for i in values))
+        return db.connection.commit()
+
     def process_item(self, item, spider):
         if isinstance(item, Subject):
             '''

@@ -73,6 +73,7 @@ class Comment(Item):
     content = Field()
     votes = Field()
     rating = Field()
+    comment_time = Field()
 
 class PersonMeta(Item):
     person_id = Field()

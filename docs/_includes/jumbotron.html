@@ -1,0 +1,21 @@
+{% if page.homepage %}
+    <div class="bs-docs-masthead" id="jumbotron-header">
+        <div class="container">
+            <h1 class="home-title">{{ site.name }}</h1>
+            <p class="lead">{{ page.description }}</p>
+            <!-- <p class="lead">
+                <a href="{{ site.project.download_url }}" class="btn btn-outline-inverse btn-lg">Download</a>
+            </p> -->
+            {% if site.project.version %}
+                <p class="version">Currently v{{ site.project.version }}, published: 2019/09</p>
+            {% endif %}
+        </div>
+    </div>
+{% else %}
+    <div class="bs-docs-header" id="jumbotron-header">
+        <div class="container">
+            <h1>{{ page.title }}</h1>
+            <p>{{ page.description }}</p>
+        </div>
+    </div>
+{% endif %}

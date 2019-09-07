@@ -13,7 +13,7 @@ import database as db
 cursor = db.connection.cursor()
 import time
 
-MAX_SIZE = 50
+MAX_SIZE = 100
 
 def get_new_ip(num):
     url = ""#代理商的IP连接，Get请求，返回结果为“|”连接的IP

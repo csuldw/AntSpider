@@ -1,1 +1,53 @@
-theme: jekyll-theme-slate
+# name of the software
+name: 电影数据集 Moviedata-10M
+
+project:
+    version: 1.0
+    download_url: https://github.com/csuldw/AntSpider/releases
+    desc: 2019/09
+
+license:
+    software: MIT License
+    software_url: http://opensource.org/licenses/MIT
+
+    docs: CC BY 3.0
+    docs_url: http://creativecommons.org/licenses/by/3.0/
+
+links:
+    header:
+      - title: GitHub
+        url: https://github.com/csuldw/AntSpider
+    footer:
+      - title: GitHub
+        url: https://github.com/csuldw/AntSpider
+      - title: Issues
+        url: https://github.com/csuldw/AntSpider/issues?state=open
+
+ui:
+    header:
+        color1: "#080331"
+        color2: "#673051"
+        trianglify: true
+
+social:
+    github:
+        user: csuldw
+        repo: AntSpider
+        url: https://github.com/csuldw/
+    twitter:
+        enabled: false
+        via:
+        hash:
+        account:
+    facebook:
+        enabled: false
+        profileUrl:
+
+analytics:
+    google: UA-123456-1
+
+# Build settings
+markdown: kramdown
+exclude:
+    - Gemfile
+    - Gemfile.lock

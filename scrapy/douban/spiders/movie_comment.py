@@ -17,18 +17,25 @@ from scrapy import Request, Spider
 
 cursor = db.connection.cursor()
 
-
+#爬取热门评论：最多啊220条
 class MovieCommentSpider(Spider):
     name = 'movie_comment'
     allowed_domains = ['movie.douban.com']
+    # sql = "SELECT douban_id FROM movies where douban_id not in (\
+    #     select douban_id from (select douban_id,count(*) num from comments GROUP BY douban_id) a where a.num>1\
+    # )"
+    ##修改查询语句
     sql = "SELECT douban_id FROM movies where douban_id not in (\
-        select douban_id from (select douban_id,count(*) num from comments GROUP BY douban_id) a where a.num >1\
+        select douban_id from (select douban_id,count(*) num from comments GROUP BY douban_id) a where a.num > 20\
     )"
     cursor.execute(sql)
     movies = cursor.fetchall()
     random.shuffle(movies)
     start_urls = {
         str(i['douban_id']): ('https://movie.douban.com/subject/%s/comments?status=P' % i['douban_id']) for i in movies
+        #str(i['douban_id']): ('https://movie.douban.com/subject/%s/comments?sort=time&status=P' % i['douban_id']) for i in movies
+
+        #https://movie.douban.com/subject/26709258/comments?sort=time&status=P
     }
 
 
@@ -97,6 +104,11 @@ class MovieCommentSpider(Spider):
                     rating_list = resp_item.xpath(rating_regx)
                     print("\n+++++++++++++++++++++++++rating", rating_list)
 
+                    #评论时间
+                    comment_time_regx = '//div[@class="comment"]/h3/span[@class="comment-info"]/span[contains(@class,"comment-time")]/@title'        
+                    comment_time_list = resp_item.xpath(comment_time_regx)
+                    print("\n+++++++++++++++++++++++++comment_time", comment_time_list)
+
                     # 内容
                     comment_regx = '//div[@class="comment"]/p/span[@class="short"]/text()'        
                     comment_list = resp_item.xpath(comment_regx)
@@ -117,6 +129,7 @@ class MovieCommentSpider(Spider):
                     comment['content'] = comment_list[0] if len(comment_list) > 0 else ""
                     comment['votes'] = vote_list[0] if len(vote_list) > 0 else ""
                     comment['rating'] = rating_list[0] if len(rating_list) > 0 else ""
+                    comment['comment_time'] = comment_time_list[0] if len(comment_time_list) > 0 else ""
                     yield comment
 
             
