@@ -2,7 +2,7 @@
 
 # 数据集简介
 
-本数据集采集于豆瓣电影，电影与演员数据收集于2019年8月上旬，影评数据(用户、评分、评论)收集于2019年9月初，共945万数据，其中包含14万部电影，7万演员，63万用户，416万条电影评分，442万条影评，是当前国内互联网公开的电影数据集中最全的一份（据我所知）！
+本数据集采集于豆瓣电影，电影与演员数据收集于2019年8月上旬，影评数据(用户、评分、评论)收集于2019年9月初，共945万数据，其中包含14万部电影，7万演员，63万用户，416万条电影评分，442万条影评，是当前国内互联网公开的电影数据集中数量最多的一份，数据已经过初步清洗，可用于推荐系统、情感分析、QA问答、知识图谱等多个领域。
 
 数据集共有5个文件: movies.csv、person.csv、users.csv、comments.csv、ratings.csv，关于各个文件的具体内容将在下文介绍。
 
@@ -90,7 +90,7 @@ users.csv数据为豆瓣用户的无脱敏信息，主要是与评论和评分�
 
 ## Comment数据格式
 
-评论数据共4428475 条，包含6个字段，各个字段说明如下: 
+评论数据共4428475 条，用户638963个，电影68887包含6个字段，各个字段说明如下: 
 
 - COMMENT_ID: 评论ID
 - USER_ID：用户ID
@@ -102,13 +102,13 @@ users.csv数据为豆瓣用户的无脱敏信息，主要是与评论和评分�
 
 # 下载地址
 
-样例数据已上传至：[http://moviedata.csuldw.com/dataset/moviedata_small.tar.gz](http://moviedata.csuldw.com/dataset/moviedata_small.tar.gz)，每个文件1000条数据，完整的数据集已存放到网盘中，需要的用户可以前去下载，密码需前往微信公众号获取(不定期更换)，获取方式如下: 
+样例数据已上传至：[http://moviedata.csuldw.com/dataset/moviedata_small.tar.gz](http://moviedata.csuldw.com/dataset/moviedata_small.tar.gz)，每个文件1000条数据。完整的数据集下载：[moviedata-10m.tar.gz](https://pan.baidu.com/s/1RxtClow1gNsYzqEQ3CCOJw)，需要的用户可以点击并下载，密码获取方式如下(不定期更换): 
 
 1. 微信搜索**【斗码小院】**公众号并点击关注;
 2. 回复**【电影数据集】**获取密码.
 
-数据采集不易，为了初步了解多少人使用该数据，还请各位使用人员不要公开进行二次转发，多谢！"授人以鱼不如授人以渔"，
-如果您对爬虫技术感兴趣，可前往Github参考笔者的[AntSpider](https://github.com/csuldw/AntSpider)项目源码。如果数据对您有用，还请关注下公众号[斗码小院](http://www.csuldw.com/assets/articleImg/2019/code-main-fun.png)，并在下方的Github中点击一下Star。
+数据采集不易，为了初步了解多少人使用该数据，还请各位使用人员不要进行二次转发！"授人以鱼不如授人以渔"，
+如果您对爬虫技术感兴趣，可前往Github参考笔者的[AntSpider](https://github.com/csuldw/AntSpider)项目源码。如果数据对您有用，可关注下公众号[斗码小院](http://www.csuldw.com/assets/articleImg/2019/code-main-fun.png)，里面有数据收集、数据处理、数据建模等多篇文章，您的关注就是对我们最好的支持，另外，还可以在下方的Github的Star中点击一下。
 
 
 # Contributor
