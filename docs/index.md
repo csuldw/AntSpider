@@ -107,7 +107,8 @@ users.csv数据为豆瓣用户的脱敏信息，主要是与评论和评分绑�
 
 # 下载地址
 
-样例数据每个文件1000条数据，下载地址：[moviedata_small.tar.gz](http://moviedata.csuldw.com/dataset/moviedata_small.tar.gz)。完整的数据集有1G+，需要的用户可以点击后面的链接进行下载：[moviedata-10m.tar.gz](https://pan.baidu.com/share/init?surl=YdCTPOcnowJuP5XZrjOiVA)，密码获取方式如下(不定期更换): 
+样例数据每个文件1000条数据，下载地址：[moviedata_small.tar.gz](http://moviedata.csuldw.com/dataset/moviedata_small.tar.gz)。完整的数据集有1G+，需要的用户可以点击后面的链接进行下载：[moviedata-10m.tar.gz](https://pan.baidu.com/s/1YdCTPOcnowJuP5XZrjOiVA)，密码获取方式如下(不定期更换): 
+
 
 1. 微信搜索**【斗码小院】**公众号并点击关注;
 2. 后台回复**【电影数据集】**获取密码.
