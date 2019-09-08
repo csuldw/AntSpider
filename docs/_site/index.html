@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="/assets/css/docs.css">
 <link rel="stylesheet" href="/assets/css/styles.css">
 
-<link rel="canonical" href="http://localhost:4004/">
+<link rel="canonical" href="http://localhost:4001/">
 <link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
 
 <style>
@@ -86,7 +86,7 @@
         <div class="col-md-12" role="main">
             <div class="bs-docs-section"><h1 id="数据集概况">数据集概况</h1>
 
-<p>本数据集采集于豆瓣电影，电影与明星数据收集于2019年8月上旬，影评数据(用户、评分、评论)收集于2019年9月初，共945万数据，其中包含14万部电影，7万演员，63万用户，416万条电影评分，442万条影评，该数据集正好弥补了国内公开的电影​数据集的空缺。数据已经过初步清洗，可用于推荐系统、情感分析、QA问答、知识图谱等多个领域。</p>
+<p>本数据集采集于豆瓣电影，电影与明星数据收集于2019年8月上旬，影评数据(用户、评分、评论)收集于2019年9月初，共945万数据，其中包含14万部电影，7万演员，63万用户，416万条电影评分，442万条影评，该数据集正好弥补下国内公开电影​数据集的空缺。数据已经过初步清洗，可用于推荐系统、情感分析、QA问答、知识图谱等多个领域。</p>
 
 <p>数据集共有5个文件: movies.csv、person.csv、users.csv、comments.csv、ratings.csv，关于各个文件的具体内容将在下文介绍。</p>
 
@@ -153,13 +153,13 @@
 
 <h2 id="user数据格式">User数据格式</h2>
 
-<p>users.csv数据为豆瓣用户的无脱敏信息，主要是与评论和评分绑定在一起，共获取了639125用户数据，包含4个字段，具体的字段如下：</p>
+<p>users.csv数据为豆瓣用户的无脱敏信息，主要是与评论和评分绑定在一起，共获取了639125用户数据，包含2个字段（已删除两个），具体的字段如下：</p>
 
 <ul>
-  <li>USER_ID：豆瓣用户ID</li>
+  <li>USER_MD5：USER_ID加密的MD5,去敏处理</li>
   <li>USER_NICKNAME: 评论用户昵称</li>
-  <li>USER_AVATAR: 评论用户头像</li>
-  <li>USER_URL: 评论用户url</li>
+  <li><del>USER_AVATAR: 评论用户头像</del>（已删除）</li>
+  <li><del>USER_URL: 评论用户url</del>（已删除）</li>
 </ul>
 
 <h2 id="rating数据格式">Rating数据格式</h2>
@@ -168,7 +168,7 @@
 
 <ul>
   <li>RATING_ID: 评分ID</li>
-  <li>USER_ID：豆瓣用户ID</li>
+  <li>USER_MD5：USER_ID加密的MD5</li>
   <li>MOVIE_ID: 电影ID，对应豆瓣的DOUBAN_ID</li>
   <li>RATING: 评分</li>
   <li>RATING_TIME: 评分时间</li>
@@ -176,14 +176,15 @@
 
 <h2 id="comment数据格式">Comment数据格式</h2>
 
-<p>评论数据共4428475 条，用户638963个，电影68887包含6个字段，各个字段说明如下:</p>
+<p>评论数据共4428475 条，用户638963个，电影68887包含7个字段，各个字段说明如下:</p>
 
 <ul>
   <li>COMMENT_ID: 评论ID</li>
-  <li>USER_ID：用户ID</li>
+  <li>USER_MD5：USER_ID加密的MD5</li>
   <li>MOVIE_ID: 电影ID，对应豆瓣的DOUBAN_ID</li>
   <li>CONTENT: 评论内容</li>
   <li>VOTES: 评论赞同数</li>
+  <li>RATINGS: 评论携带的分数</li>
   <li>COMMENT_TIME: 评论时间</li>
 </ul>
 
@@ -193,11 +194,20 @@
 
 <ol>
   <li>微信搜索<strong>【斗码小院】</strong>公众号并点击关注;</li>
-  <li>回复<strong>【电影数据集】</strong>获取密码.</li>
+  <li>后台回复<strong>【电影数据集】</strong>获取密码.</li>
 </ol>
 
 <p>数据采集不易，为了初步了解多少人使用该数据，还请各位使用人员不要进行二次转发！”授人以鱼不如授人以渔”，
 如果您对爬虫技术感兴趣，可前往Github参考笔者的<a href="https://github.com/csuldw/AntSpider">AntSpider</a>项目源码。如果数据对您有用，可关注下公众号<a href="http://www.csuldw.com/assets/articleImg/2019/code-main-fun.png">斗码小院</a>，里面有数据收集、数据处理、数据建模等多篇文章，您的关注就是对我们最好的支持，另外，还可以在下方的Github的Star中点击一下。</p>
+
+<h1 id="相关数据集推荐">相关数据集推荐</h1>
+
+<p>之前也有用户公开过豆瓣电影数据，这里提供下链接给大家参考下：</p>
+
+<ol>
+  <li><a href="https://www.kaggle.com/utmhikari/doubanmovieshortcomments">Douban Movie Short Comments Dataset</a></li>
+  <li><a href="https://www.kesci.com/home/dataset/58acf6f1d2445916845b4033">豆瓣电影评分数据集</a></li>
+</ol>
 
 <h1 id="contributor">Contributor</h1>
 
@@ -230,14 +240,14 @@
                 
                     <li>
                         <iframe class="github-btn"
-                                src="https://ghbtns.com/github-btn.html?user=csuldw&amp;repo=AntSpider&amp;type=watch&amp;count=true"
+                                src="https://ghbtns.com/github-btn.html?user=Diwei Liu&amp;repo=AntSpider&amp;type=watch&amp;count=true"
                                 width="90"
                                 height="20"
                                 title="Star on GitHub"></iframe>
                     </li>
                     <li>
                         <iframe class="github-btn"
-                                src="https://ghbtns.com/github-btn.html?user=csuldw&amp;repo=AntSpider&amp;type=fork&amp;count=true"
+                                src="https://ghbtns.com/github-btn.html?user=Diwei Liu&amp;repo=AntSpider&amp;type=fork&amp;count=true"
                                 width="90"
                                 height="20"
                                 title="Fork on GitHub"></iframe>
@@ -251,7 +261,7 @@
         </div>
 
         <p>
-            Licensed under <a href="http://opensource.org/licenses/MIT" target="_blank">MIT License</a>, documentation under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>. maintained by <a href="https://github.com/csuldw/">csuldw</a>
+            Licensed under <a href="http://opensource.org/licenses/MIT" target="_blank">MIT License</a>, documentation under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>. maintained by <a href="https://github.com/csuldw/">Diwei Liu</a>
         </p>
         <!-- <p>
             Documentation template by <a href="http://getbootstrap.com">Bootstrap team</a>, generated with <a href="https://github.com/allejo/jekyll-docs-theme">Jekyll Docs Theme</a>
