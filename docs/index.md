@@ -15,6 +15,8 @@ title: 数据集使用说明
 
 该数据集只为方便各位研究人员，**如涉及侵犯个人或团体利益，请与我们联系，我们将主动撤销一切相关数据，谢谢**！
 
+数据使用需遵循[豆瓣使用协议 & 豆瓣隐私政策](https://accounts.douban.com/passport/agreement),
+
 该数据集仅限用于研究目的，我们不能保证数据的正确性以及任何场景的适用性。对于使用这份数据的用户，必须严格遵循下列条件: 
 
 1. 未经许可，用户不得将此数据集用于任何商业或收入交易用途。
@@ -105,7 +107,7 @@ users.csv数据为豆瓣用户的脱敏信息，主要是与评论和评分绑�
 
 # 下载地址
 
-样例数据每个文件1000条数据，下载地址：[moviedata_small.tar.gz](http://moviedata.csuldw.com/dataset/moviedata_small.tar.gz)。完整的数据集有1G+，需要的用户可以点击后面的链接进行下载：[moviedata-10m.tar.gz](https://pan.baidu.com/s/1RxtClow1gNsYzqEQ3CCOJw)，密码获取方式如下(不定期更换): 
+样例数据每个文件1000条数据，下载地址：[moviedata_small.tar.gz](http://moviedata.csuldw.com/dataset/moviedata_small.tar.gz)。完整的数据集有1G+，需要的用户可以点击后面的链接进行下载：[moviedata-10m.tar.gz](https://pan.baidu.com/share/init?surl=YdCTPOcnowJuP5XZrjOiVA)，密码获取方式如下(不定期更换): 
 
 1. 微信搜索**【斗码小院】**公众号并点击关注;
 2. 后台回复**【电影数据集】**获取密码.
