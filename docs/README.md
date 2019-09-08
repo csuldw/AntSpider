@@ -111,11 +111,11 @@ users.csv数据为豆瓣用户的无脱敏信息，主要是与评论和评分�
 
 # 相关数据集推荐
 
-之前也有用户公开过豆瓣电影数据，这里提供下链接给大家参考下：
+之前也有用户公开过豆瓣电影数据，这里提供下链接给大家参考下，同时提供一下movielens电影数据集的下载地址：
 
 1. [Douban Movie Short Comments Dataset](https://www.kaggle.com/utmhikari/doubanmovieshortcomments)
 2. [豆瓣电影评分数据集](https://www.kesci.com/home/dataset/58acf6f1d2445916845b4033)
-
+3. [movielens-dataset](https://grouplens.org/datasets/movielens/)
 
 # Contributor
 
