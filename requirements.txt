@@ -1,7 +1,7 @@
 absl-py==0.7.1
 antiorm==1.2.1
 astor==0.8.0
-certifi==2019.6.16
+certifi==2022.12.7
 chardet==3.0.4
 Click==7.0
 colorama==0.4.1
